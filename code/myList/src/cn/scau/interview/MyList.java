@@ -1,5 +1,9 @@
 package cn.scau.interview;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class MyList {
 	private Node head;
 
@@ -30,6 +34,7 @@ public class MyList {
 	}
 	/**
 	 * 顺序打印链表
+	 * 使用栈实现
 	 */
 	public void printList() {
 		Node temp = head;
@@ -42,10 +47,21 @@ public class MyList {
      * 逆序打印链表
      */
 	public void reversePrint() {
-		StringBuffer s = new StringBuffer();
-		s.append("");
-		
+		if (head == null) {
+			throw new NullPointerException("链表为空!");
+		}
+		LinkedList<Integer> stack = new LinkedList<>();
+		Node temp = head;
+		while(temp != null) {
+			stack.push(temp.data);
+			temp = temp.next;
+		}
+		while(stack.size()!=0) {
+			int v = stack.pop();
+			System.out.print(v+" ");
+		}
 	}
+	
 	public int size() {	
 		int size = 0;
 		Node temp = head;
