@@ -34,7 +34,7 @@ public class MyList {
 	}
 	/**
 	 * 顺序打印链表
-	 * 使用栈实现
+	 * 
 	 */
 	public void printList() {
 		Node temp = head;
@@ -45,6 +45,7 @@ public class MyList {
 	}
     /**
      * 逆序打印链表
+     * 使用栈实现
      */
 	public void reversePrint() {
 		if (head == null) {
